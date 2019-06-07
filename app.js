@@ -15,7 +15,7 @@
       configurable: !1,
       enumerable: !0,
       get: i
-    })
+    } )
   }, n.n = function(t) {
     var e = t && t.__esModule ? function() {
       return t.default
@@ -18107,26 +18107,21 @@
             var n = t.indexOf("rv:");
             return parseInt(t.substring(n + 3, t.indexOf(".", n)), 10)
           }
-          var i = t.indexOf("Edge/");
-          if (i > 0) return parseInt(t.substring(i + 5, t.indexOf(".", i)), 10);
+
+
+
+
+
+
+
+//нетрограть//
           return !1
         }() ? ($("html").removeClass("msie"), $(document).on("mousemove touch", function(t) {
           $(window).width() > 768 && !isMobile.any && $(".magnetize").each(function() {
             ! function(t, e) {
-              var n, i, r, o = e.pageX,
-                s = e.pageY,
-                a = $(t),
-                l = 20 * a.data("dist") || 120,
-                c = a.offset().left + a.width() / 2,
-                u = a.offset().top + a.height() / 2,
-                f = -.45 * Math.floor(c - o),
                 h = -.45 * Math.floor(u - s);
               n = a, i = o, r = s, Math.floor(Math.sqrt(Math.pow(i - (n.offset().left + n.width() / 2), 2) + Math.pow(r - (n.offset().top + n.height() / 2), 2))) < l ? (TweenMax.to(a, .3, {
-                y: h,
-                x: f
               }), a.addClass("magnet")) : (TweenMax.to(a, .45, {
-                y: 0,
-                x: 0
               }), a.removeClass("magnet"))
             }($(this), t)
           })
@@ -18135,14 +18130,12 @@
 
           function e(e) {
             function n() {
-              t.find(".cursor__label").text("")
             }
             TweenMax.to(t, .2, {
               left: e.clientX - t.width() / 2,
               top: e.clientY - t.height() / 2
             }), "medium" == $(e.target).data("cursor-type") ? (t.removeClass().addClass("is-medium"), n()) : "big" == $(e.target).data("cursor-type") ? "btn-play" == $(e.target).data("cursor-text") ? (t.removeClass().addClass("is-play").addClass("is-big"), n()) : (t.removeClass().addClass("is-view").addClass("is-big"), t.find(".cursor__label").text($(e.target).data("cursor-text"))) : (t.removeClass(), n())
           }
-          $("body, #app, .app-container, a").css("cursor", "none");
           var n = function() {
             isMobile.any ? ($(window).off("mousemove", e), t.remove()) : $(window).on("mousemove", e)
           };
@@ -18154,76 +18147,56 @@
               $(".scrollable").length ? n = Scrollbar.init(document.querySelector(".scrollable")) : "home" == $(".app-container").data("namespace") && ($(window).width() <= 768 ? void 0 == Scrollbar.get(document.querySelector(".content-wrapper")) && (n = Scrollbar.init(document.querySelector(".content-wrapper"))) : void 0 != Scrollbar.get(document.querySelector(".content-wrapper")) && (Scrollbar.destroy(document.querySelector(".content-wrapper")), $(".content-wrapper").removeAttr("data-scrollbar")))
             };
             t(), $(window).on("resize", _.debounce(t, 150, {
-              leading: !1,
-              trailing: !0
             }))
           }
         }(), o(), r(),
         function() {
           if ($("[data-anim]").length) {
-            var t = $("[data-anim]");
             $(window).width() > 576 && t.each(function() {
               "image-scale" == $(this).data("anim") ? TweenLite.set($(this).find("img"), {
-                transformOrigin: "top center",
-                scale: 1.35
               }) : "image-rotation-mask" == $(this).data("anim") ? (TweenLite.set($(this), {
-                webkitClipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-                clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
-              }), TweenLite.set($(this).find("img"), {
-                transformOrigin: "center",
-                scale: 1.4,
-                rotationX: -7,
-                rotationY: 5
               })) : "text-line-to-line" == $(this).data("anim") || "text" == $(this).data("anim") || ("image-mask" == $(this).data("anim") ? (TweenLite.set($(this), {
-                webkitClipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                y: "40px"
-              }), TweenLite.set($(this).find("img, picture"), {
-                y: "80px"
               })) : "mask" == $(this).data("anim") ? TweenLite.set($(this), {
-                webkitClipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
               }) : "mask-works" == $(this).data("anim") && (TweenLite.set($(this).find(".work-item__bg"), {
-                y: "200px",
-                webkitClipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
-              }), TweenLite.set($(this).find(".work-item__title"), {
-                y: "200px"
               })))
             })
           }
         }(), s(),
         function() {
           for (var t = "clipPath", e = ["webkit", "moz", "ms", "o"], n = [t], i = document.createElement("testelement"), r = 0, o = e.length; r < o; r++) {
-            var s = e[r] + t.charAt(0).toUpperCase() + t.slice(1);
-            n.push(s)
           }
-          for (var r = 0, o = n.length; r < o; r++) {
+        for (var r = 0, o = n.length; r < o; r++) {
             var a = n[r];
             if ("" === i.style[a] && (i.style[a] = "polygon(50% 0%, 0% 100%, 100% 100%)", "" !== i.style[a])) return !0
           }
           return !1
         }() ? ($("html").addClass("clippath"), $(".w-clippath").removeClass("w-clippath").addClass("clippath")) : $(".w-clippath").removeClass("w-clippath").addClass("noclippath"), $(".cookies__button, .cookies__close-btn").click(function(t) {
           t.preventDefault(), Cookies.set("plastic-cookies", "1", {
-            expires: 730,
-            path: "/"
           }), $(".cookies").fadeOut(400, function() {
-            $(".cookies").remove()
           })
         }), void 0 == Cookies.get("plastic-cookies") ? $(".cookies").fadeIn() : $(".cookies").remove(), (t = function() {
           isMobile.any && ("home" == $(".app-container").data("namespace") ? $(window).width() <= 768 ? $("body").css({
-            overflow: "auto",
-            position: ""
           }) : $("body").css({
-            overflow: "hidden",
-            position: "fixed"
-          }) : $("body").css({
-            overflow: "auto",
-            position: ""
+        }) : $("body").css({
           }))
-        })(), $(window).resize(t), $("a").off("click"), $("a").click(function(t) {
-          var e = $(this);
           if (void 0 !== e.data("section")) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//трогать//
+
             var n = e.data("section");
             e.hasClass("is-current") ? (t.preventDefault(), t.stopPropagation(), e.closest(".logo").length || e.closest("logo--mobile").length || (console.log("a"), u())) : ($(".is-current").removeClass("is-current"), 0 == n ? $(".logo a, .logo--mobile a").addClass("is-current") : $(".nav__primary li:nth-child(" + e.data("section") + ") a").addClass("is-current"))
           } else $(".is-current").removeClass("is-current")
@@ -24555,199 +24528,84 @@
           }
         }, p._wrapSelect = function(t) {
           var e = this.slides.length;
-          if (!(this.options.wrapAround && e > 1)) return t;
-          var n = i.modulo(t, e),
-            r = Math.abs(n - this.selectedIndex),
-            o = Math.abs(n + e - this.selectedIndex),
-            s = Math.abs(n - e - this.selectedIndex);
-          !this.isDragSelect && o < r ? t += e : !this.isDragSelect && s < r && (t -= e), t < 0 ? this.x -= this.slideableWidth : t >= e && (this.x += this.slideableWidth)
-        }, p.previous = function(t, e) {
-          this.select(this.selectedIndex - 1, t, e)
-        }, p.next = function(t, e) {
-          this.select(this.selectedIndex + 1, t, e)
-        }, p.updateSelectedSlide = function() {
-          var t = this.slides[this.selectedIndex];
-          t && (this.unselectSelectedSlide(), this.selectedSlide = t, t.select(), this.selectedCells = t.cells, this.selectedElements = t.getCellElements(), this.selectedCell = t.cells[0], this.selectedElement = this.selectedElements[0])
-        }, p.unselectSelectedSlide = function() {
-          this.selectedSlide && this.selectedSlide.unselect()
-        }, p.selectCell = function(t, e, n) {
-          var i = this.queryCell(t);
-          if (i) {
-            var r = this.getCellSlideIndex(i);
-            this.select(r, e, n)
-          }
-        }, p.getCellSlideIndex = function(t) {
-          for (var e = 0; e < this.slides.length; e++) {
-            if (-1 != this.slides[e].cells.indexOf(t)) return e
-          }
-        }, p.getCell = function(t) {
-          for (var e = 0; e < this.cells.length; e++) {
-            var n = this.cells[e];
-            if (n.element == t) return n
-          }
-        }, p.getCells = function(t) {
-          var e = [];
-          return (t = i.makeArray(t)).forEach(function(t) {
-            var n = this.getCell(t);
-            n && e.push(n)
-          }, this), e
-        }, p.getCellElements = function() {
-          return this.cells.map(function(t) {
-            return t.element
-          })
-        }, p.getParentCell = function(t) {
-          var e = this.getCell(t);
-          return e || (t = i.getParent(t, ".flickity-slider > *"), this.getCell(t))
-        }, p.getAdjacentCellElements = function(t, e) {
-          if (!t) return this.selectedSlide.getCellElements();
-          e = void 0 === e ? this.selectedIndex : e;
-          var n = this.slides.length;
-          if (1 + 2 * t >= n) return this.getCellElements();
-          for (var r = [], o = e - t; o <= e + t; o++) {
-            var s = this.options.wrapAround ? i.modulo(o, n) : o,
-              a = this.slides[s];
-            a && (r = r.concat(a.getCellElements()))
-          }
-          return r
-        }, p.queryCell = function(t) {
-          return "number" == typeof t ? this.cells[t] : ("string" == typeof t && (t = this.element.querySelector(t)), this.getCell(t))
-        }, p.uiChange = function() {
-          this.emitEvent("uiChange")
-        }, p.childUIPointerDown = function(t) {
-          this.emitEvent("childUIPointerDown", [t])
-        }, p.onresize = function() {
-          this.watchCSS(), this.resize()
-        }, i.debounceMethod(d, "onresize", 150), p.resize = function() {
-          if (this.isActive) {
-            this.getSize(), this.options.wrapAround && (this.x = i.modulo(this.x, this.slideableWidth)), this.positionCells(), this._getWrapShiftCells(), this.setGallerySize(), this.emitEvent("resize");
-            var t = this.selectedElements && this.selectedElements[0];
-            this.selectCell(t, !1, !0)
-          }
-        }, p.watchCSS = function() {
-          this.options.watchCSS && (-1 != l(this.element, ":after").content.indexOf("flickity") ? this.activate() : this.deactivate())
-        }, p.onkeydown = function(t) {
-          var e = document.activeElement && document.activeElement != this.element;
-          if (this.options.accessibility && !e) {
-            var n = d.keyboardHandlers[t.keyCode];
-            n && n.call(this)
-          }
-        }, d.keyboardHandlers = {
-          37: function() {
-            var t = this.options.rightToLeft ? "next" : "previous";
-            this.uiChange(), this[t]()
-          },
-          39: function() {
-            var t = this.options.rightToLeft ? "previous" : "next";
-            this.uiChange(), this[t]()
-          }
-        }, p.focus = function() {
-          var e = t.pageYOffset;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          //не тпрогатть//
+
+
           this.element.focus({
-            preventScroll: !0
           }), t.pageYOffset != e && t.scrollTo(t.pageXOffset, e)
-        }, p.deactivate = function() {
-          this.isActive && (this.element.classList.remove("flickity-enabled"), this.element.classList.remove("flickity-rtl"), this.unselectSelectedSlide(), this.cells.forEach(function(t) {
-            t.destroy()
-          }), this.element.removeChild(this.viewport), u(this.slider.children, this.element), this.options.accessibility && (this.element.removeAttribute("tabIndex"), this.element.removeEventListener("keydown", this)), this.isActive = !1, this.emitEvent("deactivate"))
-        }, p.destroy = function() {
-          this.deactivate(), t.removeEventListener("resize", this), this.emitEvent("destroy"), a && this.$element && a.removeData(this.element, "flickity"), delete this.element.flickityGUID, delete h[this.guid]
-        }, i.extend(p, s), d.data = function(t) {
-          var e = (t = i.getQueryElement(t)) && t.flickityGUID;
-          return e && h[e]
-        }, i.htmlInit(d, "flickity"), a && a.bridget && a.bridget("flickity", d), d.setJQuery = function(t) {
-          a = t
         }, d.Cell = r, d
       }),
       function(t, n) {
         _ = function(e) {
           return n(t, e)
         }.apply(e, D = [i])
+
       }(window, function(t, e) {
-        function n() {}
-        var i = n.prototype = Object.create(e.prototype);
         i.bindStartEvent = function(t) {
-          this._bindStartEvent(t, !0)
-        }, i.unbindStartEvent = function(t) {
-          this._bindStartEvent(t, !1)
-        }, i._bindStartEvent = function(e, n) {
-          var i = (n = void 0 === n || n) ? "addEventListener" : "removeEventListener",
-            r = "mousedown";
-          t.PointerEvent ? r = "pointerdown" : "ontouchstart" in t && (r = "touchstart"), e[i](r, this)
-        }, i.handleEvent = function(t) {
-          var e = "on" + t.type;
-          this[e] && this[e](t)
-        }, i.getTouch = function(t) {
-          for (var e = 0; e < t.length; e++) {
-            var n = t[e];
-            if (n.identifier == this.pointerIdentifier) return n
-          }
-        }, i.onmousedown = function(t) {
-          var e = t.button;
-          e && 0 !== e && 1 !== e || this._pointerDown(t, t)
-        }, i.ontouchstart = function(t) {
-          this._pointerDown(t, t.changedTouches[0])
-        }, i.onpointerdown = function(t) {
-          this._pointerDown(t, t)
-        }, i._pointerDown = function(t, e) {
-          t.button || this.isPointerDown || (this.isPointerDown = !0, this.pointerIdentifier = void 0 !== e.pointerId ? e.pointerId : e.identifier, this.pointerDown(t, e))
-        }, i.pointerDown = function(t, e) {
-          this._bindPostStartEvents(t), this.emitEvent("pointerDown", [t, e])
         };
-        var r = {
-          mousedown: ["mousemove", "mouseup"],
-          touchstart: ["touchmove", "touchend", "touchcancel"],
-          pointerdown: ["pointermove", "pointerup", "pointercancel"]
-        };
+
+
+
+
+
+
+
+
+
         return i._bindPostStartEvents = function(e) {
           if (e) {
-            var n = r[e.type];
             n.forEach(function(e) {
-              t.addEventListener(e, this)
             }, this), this._boundPointerEvents = n
           }
-        }, i._unbindPostStartEvents = function() {
           this._boundPointerEvents && (this._boundPointerEvents.forEach(function(e) {
-            t.removeEventListener(e, this)
           }, this), delete this._boundPointerEvents)
-        }, i.onmousemove = function(t) {
-          this._pointerMove(t, t)
-        }, i.onpointermove = function(t) {
-          t.pointerId == this.pointerIdentifier && this._pointerMove(t, t)
-        }, i.ontouchmove = function(t) {
-          var e = this.getTouch(t.changedTouches);
-          e && this._pointerMove(t, e)
-        }, i._pointerMove = function(t, e) {
-          this.pointerMove(t, e)
-        }, i.pointerMove = function(t, e) {
-          this.emitEvent("pointerMove", [t, e])
-        }, i.onmouseup = function(t) {
-          this._pointerUp(t, t)
-        }, i.onpointerup = function(t) {
-          t.pointerId == this.pointerIdentifier && this._pointerUp(t, t)
-        }, i.ontouchend = function(t) {
-          var e = this.getTouch(t.changedTouches);
-          e && this._pointerUp(t, e)
-        }, i._pointerUp = function(t, e) {
-          this._pointerDone(), this.pointerUp(t, e)
-        }, i.pointerUp = function(t, e) {
-          this.emitEvent("pointerUp", [t, e])
-        }, i._pointerDone = function() {
-          this._pointerReset(), this._unbindPostStartEvents(), this.pointerDone()
-        }, i._pointerReset = function() {
-          this.isPointerDown = !1, delete this.pointerIdentifier
-        }, i.pointerDone = function() {}, i.onpointercancel = function(t) {
-          t.pointerId == this.pointerIdentifier && this._pointerCancel(t, t)
-        }, i.ontouchcancel = function(t) {
-          var e = this.getTouch(t.changedTouches);
-          e && this._pointerCancel(t, e)
-        }, i._pointerCancel = function(t, e) {
-          this._pointerDone(), this.pointerCancel(t, e)
-        }, i.pointerCancel = function(t, e) {
-          this.emitEvent("pointerCancel", [t, e])
-        }, n.getPointerPoint = function(t) {
-          return {
-            x: t.pageX,
-            y: t.pageY
+            return {
           }
         }, n
       }),
@@ -24756,208 +24614,33 @@
           return n(t, e)
         }.apply(e, D = [_])
       }(window, function(t, e) {
-        function n() {}
-        var i = n.prototype = Object.create(e.prototype);
         i.bindHandles = function() {
-          this._bindHandles(!0)
-        }, i.unbindHandles = function() {
-          this._bindHandles(!1)
-        }, i._bindHandles = function(e) {
           for (var n = (e = void 0 === e || e) ? "addEventListener" : "removeEventListener", i = e ? this._touchActionValue : "", r = 0; r < this.handles.length; r++) {
-            var o = this.handles[r];
-            this._bindStartEvent(o, e), o[n]("click", this), t.PointerEvent && (o.style.touchAction = i)
           }
-        }, i._touchActionValue = "none", i.pointerDown = function(t, e) {
-          this.okayPointerDown(t) && (this.pointerDownPointer = e, t.preventDefault(), this.pointerDownBlur(), this._bindPostStartEvents(t), this.emitEvent("pointerDown", [t, e]))
         };
-        var r = {
-            TEXTAREA: !0,
-            INPUT: !0,
-            SELECT: !0,
-            OPTION: !0
-          },
-          o = {
-            radio: !0,
-            checkbox: !0,
-            button: !0,
-            submit: !0,
-            image: !0,
-            file: !0
-          };
         return i.okayPointerDown = function(t) {
-          var e = r[t.target.nodeName],
-            n = o[t.target.type],
-            i = !e || n;
-          return i || this._pointerReset(), i
-        }, i.pointerDownBlur = function() {
-          var t = document.activeElement;
-          t && t.blur && t != document.body && t.blur()
-        }, i.pointerMove = function(t, e) {
-          var n = this._dragPointerMove(t, e);
-          this.emitEvent("pointerMove", [t, e, n]), this._dragMove(t, e, n)
-        }, i._dragPointerMove = function(t, e) {
-          var n = {
-            x: e.pageX - this.pointerDownPointer.pageX,
-            y: e.pageY - this.pointerDownPointer.pageY
-          };
-          return !this.isDragging && this.hasDragStarted(n) && this._dragStart(t, e), n
-        }, i.hasDragStarted = function(t) {
-          return Math.abs(t.x) > 3 || Math.abs(t.y) > 3
-        }, i.pointerUp = function(t, e) {
-          this.emitEvent("pointerUp", [t, e]), this._dragPointerUp(t, e)
-        }, i._dragPointerUp = function(t, e) {
-          this.isDragging ? this._dragEnd(t, e) : this._staticClick(t, e)
-        }, i._dragStart = function(t, e) {
-          this.isDragging = !0, this.isPreventingClicks = !0, this.dragStart(t, e)
-        }, i.dragStart = function(t, e) {
-          this.emitEvent("dragStart", [t, e])
-        }, i._dragMove = function(t, e, n) {
-          this.isDragging && this.dragMove(t, e, n)
-        }, i.dragMove = function(t, e, n) {
-          t.preventDefault(), this.emitEvent("dragMove", [t, e, n])
-        }, i._dragEnd = function(t, e) {
-          this.isDragging = !1, setTimeout(function() {
-            delete this.isPreventingClicks
-          }.bind(this)), this.dragEnd(t, e)
-        }, i.dragEnd = function(t, e) {
-          this.emitEvent("dragEnd", [t, e])
-        }, i.onclick = function(t) {
-          this.isPreventingClicks && t.preventDefault()
-        }, i._staticClick = function(t, e) {
-          this.isIgnoringMouseUp && "mouseup" == t.type || (this.staticClick(t, e), "mouseup" != t.type && (this.isIgnoringMouseUp = !0, setTimeout(function() {
-            delete this.isIgnoringMouseUp
-          }.bind(this), 400)))
-        }, i.staticClick = function(t, e) {
-          this.emitEvent("staticClick", [t, e])
-        }, n.getPointerPoint = e.getPointerPoint, n
+            }, n.getPointerPoint = e.getPointerPoint, n
       }),
       function(t, n) {
         b = function(e, i, r) {
-          return n(t, e, i, r)
         }.apply(e, D = [y, w, h])
       }(window, function(t, e, n, i) {
         i.extend(e.defaults, {
-          draggable: ">1",
-          dragThreshold: 3
         }), e.createMethods.push("_createDrag");
-        var r = e.prototype;
-        i.extend(r, n.prototype), r._touchActionValue = "pan-y";
-        var o = "createTouch" in document,
-          s = !1;
         r._createDrag = function() {
-          this.on("activate", this.onActivateDrag), this.on("uiChange", this._uiChangeDrag), this.on("childUIPointerDown", this._childUIPointerDownDrag), this.on("deactivate", this.onDeactivateDrag), this.on("cellChange", this.updateDraggable), o && !s && (t.addEventListener("touchmove", function() {}), s = !0)
-        }, r.onActivateDrag = function() {
-          this.handles = [this.viewport], this.bindHandles(), this.updateDraggable()
-        }, r.onDeactivateDrag = function() {
-          this.unbindHandles(), this.element.classList.remove("is-draggable")
-        }, r.updateDraggable = function() {
-          ">1" == this.options.draggable ? this.isDraggable = this.slides.length > 1 : this.isDraggable = this.options.draggable, this.isDraggable ? this.element.classList.add("is-draggable") : this.element.classList.remove("is-draggable")
-        }, r.bindDrag = function() {
-          this.options.draggable = !0, this.updateDraggable()
-        }, r.unbindDrag = function() {
-          this.options.draggable = !1, this.updateDraggable()
-        }, r._uiChangeDrag = function() {
-          delete this.isFreeScrolling
-        }, r._childUIPointerDownDrag = function(t) {
-          t.preventDefault(), this.pointerDownFocus(t)
-        }, r.pointerDown = function(e, n) {
-          this.isDraggable ? this.okayPointerDown(e) && (this._pointerDownPreventDefault(e), this.pointerDownFocus(e), document.activeElement != this.element && this.pointerDownBlur(), this.dragX = this.x, this.viewport.classList.add("is-pointer-down"), this.pointerDownScroll = l(), t.addEventListener("scroll", this), this._pointerDownDefault(e, n)) : this._pointerDownDefault(e, n)
-        }, r._pointerDownDefault = function(t, e) {
-          this.pointerDownPointer = e, this._bindPostStartEvents(t), this.dispatchEvent("pointerDown", t, [e])
-        };
-        var a = {
-          INPUT: !0,
-          TEXTAREA: !0,
-          SELECT: !0
-        };
-
-        function l() {
-          return {
-            x: t.pageXOffset,
-            y: t.pageYOffset
-          }
-        }
+          };
         return r.pointerDownFocus = function(t) {
-          a[t.target.nodeName] || this.focus()
-        }, r._pointerDownPreventDefault = function(t) {
-          var e = "touchstart" == t.type,
-            n = "touch" == t.pointerType,
-            i = a[t.target.nodeName];
-          e || n || i || t.preventDefault()
-        }, r.hasDragStarted = function(t) {
-          return Math.abs(t.x) > this.options.dragThreshold
-        }, r.pointerUp = function(t, e) {
-          delete this.isTouchScrolling, this.viewport.classList.remove("is-pointer-down"), this.dispatchEvent("pointerUp", t, [e]), this._dragPointerUp(t, e)
-        }, r.pointerDone = function() {
-          t.removeEventListener("scroll", this), delete this.pointerDownScroll
-        }, r.dragStart = function(e, n) {
-          this.isDraggable && (this.dragStartPosition = this.x, this.startAnimation(), t.removeEventListener("scroll", this), this.dispatchEvent("dragStart", e, [n]))
-        }, r.pointerMove = function(t, e) {
-          var n = this._dragPointerMove(t, e);
-          this.dispatchEvent("pointerMove", t, [e, n]), this._dragMove(t, e, n)
-        }, r.dragMove = function(t, e, n) {
           if (this.isDraggable) {
-            t.preventDefault(), this.previousDragX = this.dragX;
-            var i = this.options.rightToLeft ? -1 : 1;
-            this.options.wrapAround && (n.x = n.x % this.slideableWidth);
-            var r = this.dragStartPosition + n.x * i;
             if (!this.options.wrapAround && this.slides.length) {
-              var o = Math.max(-this.slides[0].target, this.dragStartPosition);
-              r = r > o ? .5 * (r + o) : r;
-              var s = Math.min(-this.getLastSlide().target, this.dragStartPosition);
-              r = r < s ? .5 * (r + s) : r
             }
-            this.dragX = r, this.dragMoveTime = new Date, this.dispatchEvent("dragMove", t, [e, n])
           }
-        }, r.dragEnd = function(t, e) {
-          if (this.isDraggable) {
-            this.options.freeScroll && (this.isFreeScrolling = !0);
-            var n = this.dragEndRestingSelect();
+  if (this.isDraggable) {
             if (this.options.freeScroll && !this.options.wrapAround) {
-              var i = this.getRestingPosition();
-              this.isFreeScrolling = -i > this.slides[0].target && -i < this.getLastSlide().target
             } else this.options.freeScroll || n != this.selectedIndex || (n += this.dragEndBoostSelect());
-            delete this.previousDragX, this.isDragSelect = this.options.wrapAround, this.select(n), delete this.isDragSelect, this.dispatchEvent("dragEnd", t, [e])
-          }
-        }, r.dragEndRestingSelect = function() {
-          var t = this.getRestingPosition(),
-            e = Math.abs(this.getSlideDistance(-t, this.selectedIndex)),
-            n = this._getClosestResting(t, e, 1),
-            i = this._getClosestResting(t, e, -1);
-          return n.distance < i.distance ? n.index : i.index
-        }, r._getClosestResting = function(t, e, n) {
+            }
           for (var i = this.selectedIndex, r = 1 / 0, o = this.options.contain && !this.options.wrapAround ? function(t, e) {
-              return t <= e
             } : function(t, e) {
-              return t < e
             }; o(e, r) && (i += n, r = e, null !== (e = this.getSlideDistance(-t, i)));) e = Math.abs(e);
-          return {
-            distance: r,
-            index: i - n
-          }
-        }, r.getSlideDistance = function(t, e) {
-          var n = this.slides.length,
-            r = this.options.wrapAround && n > 1,
-            o = r ? i.modulo(e, n) : e,
-            s = this.slides[o];
-          if (!s) return null;
-          var a = r ? this.slideableWidth * Math.floor(e / n) : 0;
-          return t - (s.target + a)
-        }, r.dragEndBoostSelect = function() {
-          if (void 0 === this.previousDragX || !this.dragMoveTime || new Date - this.dragMoveTime > 100) return 0;
-          var t = this.getSlideDistance(-this.dragX, this.selectedIndex),
-            e = this.previousDragX - this.dragX;
-          return t > 0 && e > 0 ? 1 : t < 0 && e < 0 ? -1 : 0
-        }, r.staticClick = function(t, e) {
-          var n = this.getParentCell(t.target),
-            i = n && n.element,
-            r = n && this.cells.indexOf(n);
-          this.dispatchEvent("staticClick", t, [e, i, r])
-        }, r.onscroll = function() {
-          var t = l(),
-            e = this.pointerDownScroll.x - t.x,
-            n = this.pointerDownScroll.y - t.y;
-          (Math.abs(e) > 3 || Math.abs(n) > 3) && this._pointerDone()
         }, e
       }),
       function(t, n) {
@@ -24966,141 +24649,48 @@
         }.apply(e, D = [_])
       }(window, function(t, e) {
         function n(t) {
-          this.bindTap(t)
-        }
-        var i = n.prototype = Object.create(e.prototype);
+  } var i = n.prototype = Object.create(e.prototype);
         return i.bindTap = function(t) {
-          t && (this.unbindTap(), this.tapElement = t, this._bindStartEvent(t, !0))
-        }, i.unbindTap = function() {
-          this.tapElement && (this._bindStartEvent(this.tapElement, !0), delete this.tapElement)
-        }, i.pointerUp = function(n, i) {
+
           if (!this.isIgnoringMouseUp || "mouseup" != n.type) {
-            var r = e.getPointerPoint(i),
-              o = this.tapElement.getBoundingClientRect(),
-              s = t.pageXOffset,
-              a = t.pageYOffset;
+
             if (r.x >= o.left + s && r.x <= o.right + s && r.y >= o.top + a && r.y <= o.bottom + a && this.emitEvent("tap", [n, i]), "mouseup" != n.type) {
-              this.isIgnoringMouseUp = !0;
-              var l = this;
-              setTimeout(function() {
-                delete l.isIgnoringMouseUp
-              }, 400)
+
             }
           }
         }, i.destroy = function() {
-          this.pointerDone(), this.unbindTap()
         }, n
       }),
       function(t, n) {
         T = function(e, i, r) {
-          return n(t, e, i, r)
         }.apply(e, D = [y, x, h])
       }(window, function(t, e, n, i) {
-        "use strict";
-        var r = "http://www.w3.org/2000/svg";
 
         function o(t, e) {
-          this.direction = t, this.parent = e, this._create()
         }
         o.prototype = Object.create(n.prototype), o.prototype._create = function() {
-          this.isEnabled = !0, this.isPrevious = -1 == this.direction;
-          var t = this.parent.options.rightToLeft ? 1 : -1;
-          this.isLeft = this.direction == t;
-          var e = this.element = document.createElement("button");
-          e.className = "flickity-button flickity-prev-next-button", e.className += this.isPrevious ? " previous" : " next", e.setAttribute("type", "button"), this.disable(), e.setAttribute("aria-label", this.isPrevious ? "Previous" : "Next");
-          var n = this.createSVG();
-          e.appendChild(n), this.on("tap", this.onTap), this.parent.on("select", this.update.bind(this)), this.on("pointerDown", this.parent.childUIPointerDown.bind(this.parent))
-        }, o.prototype.activate = function() {
-          this.bindTap(this.element), this.element.addEventListener("click", this), this.parent.element.appendChild(this.element)
-        }, o.prototype.deactivate = function() {
-          this.parent.element.removeChild(this.element), n.prototype.destroy.call(this), this.element.removeEventListener("click", this)
-        }, o.prototype.createSVG = function() {
-          var t = document.createElementNS(r, "svg");
-          t.setAttribute("class", "flickity-button-icon"), t.setAttribute("viewBox", "0 0 100 100");
-          var e = document.createElementNS(r, "path"),
-            n = function(t) {
-              if ("string" == typeof t) return t;
-              return "M " + t.x0 + ",50 L " + t.x1 + "," + (t.y1 + 50) + " L " + t.x2 + "," + (t.y2 + 50) + " L " + t.x3 + ",50  L " + t.x2 + "," + (50 - t.y2) + " L " + t.x1 + "," + (50 - t.y1) + " Z"
-            }(this.parent.options.arrowShape);
-          return e.setAttribute("d", n), e.setAttribute("class", "arrow"), this.isLeft || e.setAttribute("transform", "translate(100, 100) rotate(180) "), t.appendChild(e), t
-        }, o.prototype.onTap = function() {
           if (this.isEnabled) {
-            this.parent.uiChange();
-            var t = this.isPrevious ? "previous" : "next";
-            this.parent[t]()
           }
-        }, o.prototype.handleEvent = i.handleEvent, o.prototype.onclick = function(t) {
-          var e = document.activeElement;
-          e && e == this.element && this.onTap(t, t)
-        }, o.prototype.enable = function() {
-          this.isEnabled || (this.element.disabled = !1, this.isEnabled = !0)
-        }, o.prototype.disable = function() {
-          this.isEnabled && (this.element.disabled = !0, this.isEnabled = !1)
-        }, o.prototype.update = function() {
-          var t = this.parent.slides;
-          if (this.parent.options.wrapAround && t.length > 1) this.enable();
           else {
-            var e = t.length ? t.length - 1 : 0,
-              n = this.isPrevious ? 0 : e;
-            this[this.parent.selectedIndex == n ? "disable" : "enable"]()
           }
-        }, o.prototype.destroy = function() {
-          this.deactivate()
         }, i.extend(e.defaults, {
-          prevNextButtons: !0,
-          arrowShape: {
-            x0: 10,
-            x1: 60,
-            y1: 50,
-            x2: 70,
-            y2: 40,
-            x3: 30
-          }
+
         }), e.createMethods.push("_createPrevNextButtons");
-        var s = e.prototype;
         return s._createPrevNextButtons = function() {
-          this.options.prevNextButtons && (this.prevButton = new o(-1, this), this.nextButton = new o(1, this), this.on("activate", this.activatePrevNextButtons))
-        }, s.activatePrevNextButtons = function() {
-          this.prevButton.activate(), this.nextButton.activate(), this.on("deactivate", this.deactivatePrevNextButtons)
-        }, s.deactivatePrevNextButtons = function() {
-          this.prevButton.deactivate(), this.nextButton.deactivate(), this.off("deactivate", this.deactivatePrevNextButtons)
         }, e.PrevNextButton = o, e
-      }),
+    }),
       function(t, n) {
         S = function(e, i, r) {
-          return n(t, e, i, r)
         }.apply(e, D = [y, x, h])
       }(window, function(t, e, n, i) {
         function r(t) {
-          this.parent = t, this._create()
         }
         r.prototype = new n, r.prototype._create = function() {
-          this.holder = document.createElement("ol"), this.holder.className = "flickity-page-dots", this.dots = [], this.on("tap", this.onTap), this.on("pointerDown", this.parent.childUIPointerDown.bind(this.parent))
-        }, r.prototype.activate = function() {
-          this.setDots(), this.bindTap(this.holder), this.parent.element.appendChild(this.holder)
-        }, r.prototype.deactivate = function() {
-          this.parent.element.removeChild(this.holder), n.prototype.destroy.call(this)
-        }, r.prototype.setDots = function() {
-          var t = this.parent.slides.length - this.dots.length;
-          t > 0 ? this.addDots(t) : t < 0 && this.removeDots(-t)
-        }, r.prototype.addDots = function(t) {
           for (var e = document.createDocumentFragment(), n = [], i = this.dots.length, r = i + t, o = i; o < r; o++) {
-            var s = document.createElement("li");
-            s.className = "dot", s.setAttribute("aria-label", "Page dot " + (o + 1)), e.appendChild(s), n.push(s)
           }
-          this.holder.appendChild(e), this.dots = this.dots.concat(n)
-        }, r.prototype.removeDots = function(t) {
           this.dots.splice(this.dots.length - t, t).forEach(function(t) {
-            this.holder.removeChild(t)
-          }, this)
-        }, r.prototype.updateSelected = function() {
-          this.selectedDot && (this.selectedDot.className = "dot", this.selectedDot.removeAttribute("aria-current")), this.dots.length && (this.selectedDot = this.dots[this.parent.selectedIndex], this.selectedDot.className = "dot is-selected", this.selectedDot.setAttribute("aria-current", "step"))
-        }, r.prototype.onTap = function(t) {
-          var e = t.target;
+              }, this)
           if ("LI" == e.nodeName) {
-            this.parent.uiChange();
-            var n = this.dots.indexOf(e);
-            this.parent.select(n)
           }
         }, r.prototype.destroy = function() {
           this.deactivate()
@@ -25111,7 +24701,6 @@
         return o._createPageDots = function() {
           this.options.pageDots && (this.pageDots = new r(this), this.on("activate", this.activatePageDots), this.on("select", this.updateSelectedPageDots), this.on("cellChange", this.updatePageDots), this.on("resize", this.updatePageDots), this.on("deactivate", this.deactivatePageDots))
         }, o.activatePageDots = function() {
-          this.pageDots.activate()
         }, o.updateSelectedPageDots = function() {
           this.pageDots.updateSelected()
         }, o.updatePageDots = function() {
@@ -25382,11 +24971,7 @@
             }
           }
         };
-        var a = {
-          1: !0,
-          9: !0,
-          11: !0
-        };
+
 
         function l(t) {
           this.img = t
