@@ -7,6 +7,15 @@ a, body, div, h1, h2, h3, h4, h5, h6, html {
   font-size: 100%;
   font: inherit
 }
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 10px;
+  }
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -265,19 +274,6 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   transform-origin: top center
 }
 
-@supports (padding-top:constant(safe-area-inset-top)) {
-  .nav__bg {
-    --safe-area-inset-top: constant(safe-area-inset-top);
-    height: calc(100vh + var(--safe-area-inset-top))
-  }
-}
-
-@supports (padding-top:env(safe-area-inset-top)) {
-  .nav__bg {
-    --safe-area-inset-top: env(safe-area-inset-top);
-    height: calc(100vh + var(--safe-area-inset-top))
-  }
-}
 
 .nav__container {
   position: fixed;
@@ -298,18 +294,7 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   -webkit-overflow-scrolling: touch
 }
 @media (max-width:320.98px) {
-  .nav__container {
-    font-size: 5.6em;
-    display: block;
-    padding: 10px 3px 5px
-  }
-}
-@media (max-width:320.98px) {
-  .nav__primary {
-    width: 100%;
-    padding-left: 0;
-    margin-bottom: 40px
-  }
+
 }
 @media (max-width:576.98px) {
   .nav__container {
