@@ -301,7 +301,7 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   .nav__container {
     font-size: 5.6em;
     display: block;
-    padding: 120px 30px 50px
+    padding: 10px 3px 5px
   }
 }
 @media (max-width:320.98px) {
