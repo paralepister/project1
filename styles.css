@@ -297,7 +297,9 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   overflow: auto;
   -webkit-overflow-scrolling: touch
 }
+@media (max-width:320.98px) {
 
+}
 @media (max-width:576.98px) {
   .nav__container {
     display: block;
