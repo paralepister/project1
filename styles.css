@@ -1,4 +1,6 @@
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
+a, body, div, h1, h2, h3, h4, h5, h6, html {
   margin: 0;
   padding: 0;
   border: 0;
@@ -6,8 +8,8 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   font: inherit
 }
 
-
 body {
+  font-family: 'Roboto', sans-serif;
   line-height: 1
 }
 
@@ -33,9 +35,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block
 }
 
-@-ms-viewport {
-  width: device-width
-}
 
 html {
   -webkit-box-sizing: border-box;
@@ -57,7 +56,7 @@ html {
   -webkit-transform-origin: center center;
   transform-origin: center center;
   pointer-events: none;
-  mix-blend-mode: exclusion
+  /* mix-blend-mode: exclusion – инверсия цветов */
 }
 
 @media (max-width:768.98px) {
@@ -78,7 +77,7 @@ html {
   left: 0;
   top: 0;
   mix-blend-mode: exclusion;
-  background: #fff;
+  background: #ccc;
   width: 80px;
   height: 80px;
   border-radius: 80px;
@@ -312,9 +311,7 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
 }
 
 @media (max-width:768.98px) {
-  .nav__primary {
-    padding-left: 16.66666667vw
-  }
+
 }
 
 @media (max-width:576.98px) {
@@ -361,8 +358,10 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;/* Убираем подчеркивание */
+  color: #222222; /* Цвет ссылки при наведении на нее курсора мыши */
 }
+
 
 body {
   font-size: 100%;
