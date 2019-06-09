@@ -303,7 +303,7 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
 @media (max-width:576.98px) {
   .nav__container {
     display: block;
-    padding: 120px 3px 50px
+    padding: 120px 3px 50px;
   }
 }
 
