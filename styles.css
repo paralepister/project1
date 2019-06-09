@@ -352,6 +352,12 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   }
 }
 
+@media (max-width:320.98px) {
+  .nav__primary ul li a {
+    font-size: 5.2em;
+  }
+}
+
 *, a, div, h1, h2, h3, h4, h5, html, img, li, p, span {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
@@ -368,7 +374,7 @@ a {
 body {
   font-size: 100%;
   position: relative;
-  font-size: 10px;
+  font-size: 9px;
   background: #fff;
   overflow: hidden
 }
