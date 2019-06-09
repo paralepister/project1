@@ -265,6 +265,19 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   transform-origin: top center
 }
 
+@supports (padding-top:constant(safe-area-inset-top)) {
+  .nav__bg {
+    --safe-area-inset-top: constant(safe-area-inset-top);
+    height: calc(100vh + var(--safe-area-inset-top))
+  }
+}
+
+@supports (padding-top:env(safe-area-inset-top)) {
+  .nav__bg {
+    --safe-area-inset-top: env(safe-area-inset-top);
+    height: calc(100vh + var(--safe-area-inset-top))
+  }
+}
 
 .nav__container {
   position: fixed;
@@ -284,9 +297,7 @@ body.work-detail .logo--mobile svg .logo-g, body.work-detail .logo svg .logo-g {
   overflow: auto;
   -webkit-overflow-scrolling: touch
 }
-@media (max-width:320.98px) {
 
-}
 @media (max-width:576.98px) {
   .nav__container {
     display: block;
