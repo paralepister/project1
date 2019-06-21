@@ -164,83 +164,26 @@
         settings: {
         }
       };
-// не удалять уонец//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       function l(i) {
-        var r, s = i || window.event,
-          l = o.call(arguments, 1),
-          f = 0,
-          h = 0,
-          d = 0,
-          p = 0,
-          g = 0;
         if ((i = t.event.fix(s)).type = "mousewheel", "detail" in s && (d = -1 * s.detail), "wheelDelta" in s && (d = s.wheelDelta), "wheelDeltaY" in s && (d = s.wheelDeltaY), "wheelDeltaX" in s && (h = -1 * s.wheelDeltaX), "axis" in s && s.axis === s.HORIZONTAL_AXIS && (h = -1 * d, d = 0), f = 0 === d ? h : d, "deltaY" in s && (f = d = -1 * s.deltaY), "deltaX" in s && (h = s.deltaX, 0 === d && (f = -1 * h)), 0 !== d || 0 !== h) {
           if (1 === s.deltaMode) {
-            var v = t.data(this, "mousewheel-line-height");
-            f *= v, d *= v, h *= v
-          } else if (2 === s.deltaMode) {
-            var m = t.data(this, "mousewheel-page-height");
-            f *= m, d *= m, h *= m
           }
           if (r = Math.max(Math.abs(d), Math.abs(h)), (!n || r < n) && (n = r, u(s, r) && (n /= 40)), u(s, r) && (f /= 40, h /= 40, d /= 40), f = Math[f >= 1 ? "floor" : "ceil"](f / n), h = Math[h >= 1 ? "floor" : "ceil"](h / n), d = Math[d >= 1 ? "floor" : "ceil"](d / n), a.settings.normalizeOffset && this.getBoundingClientRect) {
-            var y = this.getBoundingClientRect();
-            p = i.clientX - y.left, g = i.clientY - y.top
-          }
-          return i.deltaX = h, i.deltaY = d, i.deltaFactor = n, i.offsetX = p, i.offsetY = g, i.deltaMode = 0, l.unshift(i, f, h, d), e && clearTimeout(e), e = setTimeout(c, 200), (t.event.dispatch || t.event.handle).apply(this, l)
+        return i.deltaX = h, i.deltaY = d, i.deltaFactor = n, i.offsetX = p, i.offsetY = g, i.deltaMode = 0, l.unshift(i, f, h, d), e && clearTimeout(e), e = setTimeout(c, 200), (t.event.dispatch || t.event.handle).apply(this, l)
         }
       }
-
-      function c() {
-        n = null
-      }
-
-      function u(t, e) {
-        return a.settings.adjustOldDeltas && "mousewheel" === t.type && e % 120 == 0
+    }
+  function u(t, e) {
       }
       t.fn.extend({
         mousewheel: function(t) {
-          return t ? this.bind("mousewheel", t) : this.trigger("mousewheel")
         },
         unmousewheel: function(t) {
-          return this.unbind("mousewheel", t)
         }
       })
     }, r = [n("7t+N")], void 0 === (o = "function" == typeof(i = s) ? i.apply(e, r) : i) || (t.exports = o)
   },
   "74Kd": function(t, e, n) {
-    "use strict";
     n.d(e, "a", function() {
       return r
     });
@@ -248,10 +191,35 @@
     i.m._gsDefine("TimelineLite", ["core.Animation", "core.SimpleTimeline", "TweenLite"], function() {
       var t = function(t) {
           i.j.call(this, t), this._labels = {}, this.autoRemoveChildren = !0 === this.vars.autoRemoveChildren, this.smoothChildTiming = !0 === this.vars.smoothChildTiming, this._sortChildren = !0, this._onUpdate = this.vars.onUpdate;
-          var e, n, r = this.vars;
-          for (n in r) e = r[n], o(e) && -1 !== e.join("").indexOf("{self}") && (r[n] = this._swapSelfInParams(e));
-          o(r.tweens) && this.add(r.tweens, 0, r.align, r.stagger)
         },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//не удалять конец //
+
+
+
+
+
+
+
+
+
+
+
+
         e = i.n._internals,
         n = t._internals = {},
         r = e.isSelector,
