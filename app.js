@@ -1,39 +1,28 @@
+// не удалять //
 ! function(t) {
   var e = {};
 
   function n(i) {
-    if (e[i]) return e[i].exports;
     var r = e[i] = {
-      i: i,
-      l: !1,
       exports: {}
     };
     return t[i].call(r.exports, r, r.exports, n), r.l = !0, r.exports
   }
   n.m = t, n.c = e, n.d = function(t, e, i) {
     n.o(t, e) || Object.defineProperty(t, e, {
-      configurable: !1,
-      enumerable: !0,
       get: i
     } )
-  }, n.n = function(t) {
     var e = t && t.__esModule ? function() {
-      return t.default
     } : function() {
-      return t
     };
-    return n.d(e, "a", e), e
   }, n.o = function(t, e) {
-    return Object.prototype.hasOwnProperty.call(t, e)
   }, n.p = "/", n(n.s = 0)
 }({
   "+xur": function(t, e, n) {
-    "use strict";
     Object.defineProperty(e, "__esModule", {
-      value: !0
+
     }), e.default = {
       mounted: function() {
-        console.log("Component mounted.")
       }
     }
   },
@@ -42,214 +31,97 @@
   },
   "162o": function(t, e, n) {
     (function(t) {
-      var i = void 0 !== t && t || "undefined" != typeof self && self || window,
+
         r = Function.prototype.apply;
 
       function o(t, e) {
-        this._id = t, this._clearFn = e
       }
       e.setTimeout = function() {
-        return new o(r.call(setTimeout, i, arguments), clearTimeout)
-      }, e.setInterval = function() {
-        return new o(r.call(setInterval, i, arguments), clearInterval)
-      }, e.clearTimeout = e.clearInterval = function(t) {
-        t && t.close()
-      }, o.prototype.unref = o.prototype.ref = function() {}, o.prototype.close = function() {
-        this._clearFn.call(i, this._id)
-      }, e.enroll = function(t, e) {
-        clearTimeout(t._idleTimeoutId), t._idleTimeout = e
-      }, e.unenroll = function(t) {
-        clearTimeout(t._idleTimeoutId), t._idleTimeout = -1
-      }, e._unrefActive = e.active = function(t) {
-        clearTimeout(t._idleTimeoutId);
-        var e = t._idleTimeout;
+
         e >= 0 && (t._idleTimeoutId = setTimeout(function() {
-          t._onTimeout && t._onTimeout()
+
         }, e))
       }, n("mypn"), e.setImmediate = "undefined" != typeof self && self.setImmediate || void 0 !== t && t.setImmediate || this && this.setImmediate, e.clearImmediate = "undefined" != typeof self && self.clearImmediate || void 0 !== t && t.clearImmediate || this && this.clearImmediate
     }).call(e, n("DuR2"))
   },
   "21It": function(t, e, n) {
-    "use strict";
-    var i = n("FtD3");
     t.exports = function(t, e, n) {
-      var r = n.config.validateStatus;
-      n.status && r && !r(n.status) ? e(i("Request failed with status code " + n.status, n.config, null, n.request, n)) : t(n)
     }
+
   },
   "2WMj": function(t, e, n) {
-    "use strict";
     Object.defineProperty(e, "__esModule", {
-      value: !0
     });
-    var i = n("R5/K");
     document.addEventListener("DOMContentLoaded", function() {
-      var t;
-      Barba.Pjax.Dom.wrapperId = "app", Barba.Pjax.Dom.containerClass = "app-container", Barba.Pjax.init(), Barba.Prefetch.init();
       var e = Barba.BaseTransition.extend({
           start: function() {
-            Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this))
           },
           fadeOut: function() {
-            return $(this.oldContainer).promise()
           },
           fadeIn: function() {
-            var t = this,
-              e = $(this.newContainer),
-              n = "Power3.easeInOut",
-              i = "Power2.easeInOut",
               r = new TimelineMax({
                 onComplete: function() {
-                  e.attr("style", ""), $(".overlay").attr("style", ""), $(".scrollable").attr("style", ""), window.resetNav(), t.done()
                 }
               });
             $(".overlay").css({
-              display: "block"
-            }), $(".scrollable").css({
-              overflow: "hidden"
             }), $(".toggle").removeClass("is-open"), $("html").hasClass("clippath") ? r.set(e, {
-              visibility: "visible",
-              position: "fixed",
-              top: "0px",
-              left: "0px",
-              width: "100%",
-              y: "0",
-              webkitClipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              zIndex: "20"
-            }) : r.set(e, {
-              visibility: "visible",
-              position: "fixed",
-              top: "0px",
-              left: "0px",
-              width: "100%",
-              y: "0",
-              opacity: 0,
-              zIndex: "20"
-            }), r.addLabel("initial"), r.to($(".overlay"), 1.7, {
-              opacity: 1,
-              force3D: !0,
-              ease: i,
+}) : r.set(e, {
               onComplete: function() {
-                o(e.data("namespace"))
               }
             }, "initial");
             r.to($(this.oldContainer), 1.7, {
-              y: "-40vh",
-              force3D: !0,
-              ease: i
             }, "initial"), $("html").hasClass("clippath") ? r.to(e, 1.5, {
-              y: "0",
-              webkitClipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              ease: n,
-              force3D: !0
+
             }, "initial") : r.to(e, 1.5, {
-              y: "0",
-              opacity: 0,
-              ease: n,
-              force3D: !0
+
             }, "initial")
           }
         }),
         n = Barba.BaseTransition.extend({
           start: function() {
-            Promise.all([this.newContainerLoading, this.showOverlay()]).then(this.fadeIn.bind(this))
           },
           showOverlay: function() {
             return new Promise(function(t) {
               $(".overlay").css({
-                opacity: 1,
-                "z-index": 1e3,
-                background: "white",
-                display: "block",
-                "transform-origin": "center bottom",
-                transform: "scale(1, 0)"
-              }), i.TweenMax.to($(".overlay"), 1.5, {
-                scaleY: 1,
-                ease: "Power3.easeInOut",
-                onComplete: function() {
+              onComplete: function() {
                   t()
                 }
               })
             })
           },
           fadeIn: function() {
-            var t = this,
-              e = $(this.newContainer),
-              n = new TimelineMax({
+            n = new TimelineMax({
                 onComplete: function() {
-                  $(".overlay").attr("style", ""), window.resetNav(), t.done()
-                }
+              }
               });
             $(this.oldContainer).hide(), o(e.data("namespace")), e.css({
-              visibility: "visible"
-            }), $("html, body").scrollTop(0), $(".toggle").removeClass("is-open"), $(".overlay").css({
-              "transform-origin": "center top"
-            }), n.to($(".overlay"), 1.5, {
-              scaleY: 0,
-              force3D: !0,
-              ease: "Power3.easeInOut"
+          }), $("html, body").scrollTop(0), $(".toggle").removeClass("is-open"), $(".overlay").css({
+          }), n.to($(".overlay"), 1.5, {
             })
           }
         }),
         r = Barba.BaseTransition.extend({
           start: function() {
-            Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this))
-          },
+        },
           fadeOut: function() {
-            return $(this.oldContainer).hide().promise()
           },
           fadeIn: function() {
-            var t = this,
-              e = $(this.newContainer),
-              n = $(".nav__bg"),
-              r = $(".nav__primary"),
-              s = $(".nav__secondary");
             e.css({
-              visibility: "visible"
-            }), $(".toggle").removeClass("is-open"), $(window).width() <= 768 && $("body").css({
-              overflow: "auto"
             });
             var a = new TimelineMax({
               onComplete: function() {
-                $(".scrollable").attr("style", ""), e.attr("style", ""), o(e.data("namespace")), window.resetNav(), t.done(), $("body, html").stop().scrollTop(0)
               }
             });
             a.addLabel("initial"), a.to(s, .6, {
-              opacity: 0
-            }), a.staggerTo(r.find("li"), .5, {
-              opacity: 0,
-              y: "-30px",
-              ease: i.Power3.easeIn
-            }, .1, "initial"), a.addLabel("finish"), a.to(n, .7, {
-              scaleY: 0,
-              ease: i.Power3.easeInOut,
-              onComplete: window.resetNav
-            }, "finish-=0.2"), $("html").hasClass("clippath") && a.fromTo($(".nav"), .7, {
-              webkitClipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-            }, {
-              webkitClipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-              ease: i.Power3.easeInOut
-            }, "finish-=0.2")
+        }, {
+        }, "finish-=0.2")
           }
         });
-
       function o(t) {
-        $("body").removeClass().addClass(t)
       }
       Barba.Pjax.getTransition = function() {
-        return $(t).closest(".nav").length ? r : isMobile.any ? n : e
       }, Barba.Dispatcher.on("linkClicked", function(e) {
-        t = e
-      }), Barba.Dispatcher.on("newPageReady", function(t, e, n, i) {
-        console.log("newPageReady"), "work-detail" == $(n).data("namespace") && window.moduleHeader()
-      }), Barba.Dispatcher.on("transitionCompleted", function(t) {
         console.log("transitionCompleted"), $("body").css({
-          background: "",
-          color: ""
         }).scrollTop(0), $(".toggle >div >div").attr("style", ""), $(".logo-g").attr("style", ""), $(".fill, .stroke").attr("style", ""), window.initAll()
       })
     })
@@ -257,62 +129,74 @@
   "3IRH": function(t, e) {
     t.exports = function(t) {
       return t.webpackPolyfill || (t.deprecate = function() {}, t.paths = [], t.children || (t.children = []), Object.defineProperty(t, "loaded", {
-        enumerable: !0,
         get: function() {
           return t.l
         }
       }), Object.defineProperty(t, "id", {
-        enumerable: !0,
         get: function() {
-          return t.i
         }
       }), t.webpackPolyfill = 1), t
     }
   },
   "5VQ+": function(t, e, n) {
     "use strict";
-    var i = n("cGG2");
     t.exports = function(t, e) {
       i.forEach(t, function(n, i) {
-        i !== e && i.toUpperCase() === e.toUpperCase() && (t[e] = n, delete t[i])
       })
     }
   },
   "5xbe": function(t, e, n) {
-    var i, r, o, s;
     s = function(t) {
-      var e, n, i = ["wheel", "mousewheel", "DOMMouseScroll", "MozMousePixelScroll"],
-        r = "onwheel" in document || document.documentMode >= 9 ? ["wheel"] : ["mousewheel", "DomMouseScroll", "MozMousePixelScroll"],
-        o = Array.prototype.slice;
-      if (t.event.fixHooks)
-        for (var s = i.length; s;) t.event.fixHooks[i[--s]] = t.event.mouseHooks;
-      var a = t.event.special.mousewheel = {
-        version: "3.1.12",
+          o = Array.prototype.slice;
+    var a = t.event.special.mousewheel = {
         setup: function() {
-          if (this.addEventListener)
             for (var e = r.length; e;) this.addEventListener(r[--e], l, !1);
-          else this.onmousewheel = l;
-          t.data(this, "mousewheel-line-height", a.getLineHeight(this)), t.data(this, "mousewheel-page-height", a.getPageHeight(this))
         },
         teardown: function() {
-          if (this.removeEventListener)
             for (var e = r.length; e;) this.removeEventListener(r[--e], l, !1);
-          else this.onmousewheel = null;
-          t.removeData(this, "mousewheel-line-height"), t.removeData(this, "mousewheel-page-height")
+
         },
         getLineHeight: function(e) {
-          var n = t(e),
             i = n["offsetParent" in t.fn ? "offsetParent" : "parent"]();
-          return i.length || (i = t("body")), parseInt(i.css("fontSize"), 10) || parseInt(n.css("fontSize"), 10) || 16
         },
         getPageHeight: function(e) {
-          return t(e).height()
         },
         settings: {
-          adjustOldDeltas: !0,
-          normalizeOffset: !0
         }
       };
+// не удалять уонец//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       function l(i) {
         var r, s = i || window.event,
@@ -26914,37 +26798,7 @@
           return "string" == typeof e && "=" === e.charAt(1) && (e = ("-" === e.charAt(0) ? -1 : 1) * parseFloat(e.substr(2)) + a), c && 1 === a && "hidden" === Z(t, "visibility", n) && 0 !== e && (a = 0), V ? o = new yt(l, "opacity", a, e - a, o) : ((o = new yt(l, "opacity", 100 * a, 100 * (e - a), o)).xn1 = c ? 1 : 0, l.zoom = 1, o.type = 2, o.b = "alpha(opacity=" + o.s + ")", o.e = "alpha(opacity=" + (o.s + o.c) + ")", o.data = t, o.plugin = s, o.setRatio = Gt), c && ((o = new yt(l, "visibility", 0, 0, o, -1, null, !1, 0, 0 !== a ? "inherit" : "hidden", 0 === e ? "hidden" : "inherit")).xs0 = "inherit", r._overwriteProps.push(o.n), r._overwriteProps.push(i)), o
         }
       });
-      var Yt = function(t, e) {
-          e && (t.removeProperty ? ("ms" !== e.substr(0, 2) && "webkit" !== e.substr(0, 6) || (e = "-" + e), t.removeProperty(e.replace(k, "-$1").toLowerCase())) : t.removeAttribute(e))
-        },
-        Kt = function(t) {
-          if (this.t._gsClassPT = this, 1 === t || 0 === t) {
-            this.t.setAttribute("class", 0 === t ? this.b : this.e);
-            for (var e = this.data, n = this.t.style; e;) e.v ? n[e.p] = e.v : Yt(n, e.p), e = e._next;
-            1 === t && this.t._gsClassPT === this && (this.t._gsClassPT = null)
-          } else this.t.getAttribute("class") !== this.e && this.t.setAttribute("class", this.e)
-        };
-      Tt("className", {
-        parser: function(e, i, r, o, s, a, l) {
-          var c, u, f, h, d, p = e.getAttribute("class") || "",
-            g = e.style.cssText;
-          if ((s = o._classNamePT = new yt(e, r, 0, 0, s, 2)).setRatio = Kt, s.pr = -11, t = !0, s.b = p, u = et(e, n), f = e._gsClassPT) {
-            for (h = {}, d = f.data; d;) h[d.p] = 1, d = d._next;
-            f.setRatio(1)
-          }
-          return e._gsClassPT = s, s.e = "=" !== i.charAt(1) ? i : p.replace(new RegExp("(?:\\s|^)" + i.substr(2) + "(?![\\w-])"), "") + ("+" === i.charAt(0) ? " " + i.substr(2) : ""), e.setAttribute("class", s.e), c = nt(e, u, et(e), l, h), e.setAttribute("class", p), s.data = c.firstMPT, e.style.cssText = g, s = s.xfirst = o.parse(e, c.difs, s, a)
-        }
-      });
-      var Qt = function(t) {
-        if ((1 === t || 0 === t) && this.data._totalTime === this.data._totalDuration && "isFromStart" !== this.data.data) {
-          var e, n, i, r, o, s = this.t.style,
-            l = a.transform.parse;
-          if ("all" === this.e) s.cssText = "", r = !0;
-          else
-            for (i = (e = this.e.split(" ").join("").split(",")).length; --i > -1;) n = e[i], a[n] && (a[n].parse === l ? r = !0 : n = "transformOrigin" === n ? Mt : a[n].p), Yt(s, n);
-          r && (Yt(s, Dt), (o = this.t._gsTransform) && (o.svg && (this.t.removeAttribute("data-svg-origin"), this.t.removeAttribute("transform")), delete this.t._gsTransform))
-        }
-      };
+
       for (Tt("clearProps", {
           parser: function(e, n, i, r, o) {
             return (o = new yt(e, i, 0, 0, o, 2)).setRatio = Qt, o.e = n, o.pr = -10, o.data = r._tween, t = !0, o
