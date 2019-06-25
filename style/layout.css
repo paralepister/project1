@@ -4,30 +4,30 @@
   margin: 0
 }
 
-#main11111 {
+#allrecords {
   -webkit-font-smoothing: antialiased;
   background-color: none
 }
 
-#main11111 a {
+#allrecords a {
   color: #ff8562;
   text-decoration: none
 }
 
-#main11111 a[href^=tel] {
+#allrecords a[href^=tel] {
   color: inherit;
   text-decoration: none
 }
 
-#main11111 ol {
+#allrecords ol {
   padding-left: 22px
 }
 
-#main11111 ul {
+#allrecords ul {
   padding-left: 20px
 }
 
-#main11111 b, #main11111 strong {
+#allrecords b, #allrecords strong {
   font-weight: 700
 }
 
